@@ -28,6 +28,23 @@
 .journey-summary > .primary {
   justify-self: start;
 }
+@media (max-height: 950px) and (min-width: 761px) {
+  .home-identity {
+    gap: 12px;
+  }
+  .home-name {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .home-identity > .primary {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .home-layout {
+    min-height: 380px;
+  }
+}
 @media (max-width: 760px) {
   .home-layout {
     min-height: 0;
