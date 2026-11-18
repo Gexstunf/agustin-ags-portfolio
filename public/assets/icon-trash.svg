@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="1320.0 1083.0 58 58"><g clip-path="url(#clip14_57_2)">
+<path d="M1364.41 1083.91H1333.59C1326.59 1083.91 1320.91 1089.59 1320.91 1096.59V1127.41C1320.91 1134.41 1326.59 1140.09 1333.59 1140.09H1364.41C1371.41 1140.09 1377.09 1134.41 1377.09 1127.41V1096.59C1377.09 1089.59 1371.41 1083.91 1364.41 1083.91Z" fill="#AEB8CD" stroke="white" stroke-opacity="0.18" />
+<path d="M1338.12 1102.03H1359.88L1358.06 1130.12H1339.94L1338.12 1102.03ZM1335.41 1097.5H1362.59V1102.03H1335.41V1097.5ZM1344.47 1092.97H1353.53V1097.5H1344.47V1092.97Z" fill="#E4EAF5" />
+<path d="M1345.38 1107.47V1123.78ZM1352.62 1107.47V1123.78Z" fill="black" />
+<path d="M1345.38 1107.47V1123.78M1352.62 1107.47V1123.78" stroke-width="3" stroke-linecap="round" stroke="#788397" />
+</g>
+<defs>
+<filter id="filter0_d_57_2" x="468" y="1044" width="953" height="156" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="10" />
+<feGaussianBlur stdDeviation="12" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_57_2" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_57_2" result="shape" />
+</filter>
+<clipPath id="bgblur_4_57_2_clip_path" transform="translate(-468 -1044)"><rect x="492" y="1068" width="905" height="98" rx="23" />
+</clipPath><linearGradient id="paint0_linear_57_2" x1="0" y1="0" x2="1078.65" y2="1725.84" gradientUnits="userSpaceOnUse">
+<stop stop-color="#001B22" />
+<stop offset="0.5" stop-color="#02090E" />
+<stop offset="1" stop-color="#061E38" />
+</linearGradient>
+<linearGradient id="paint1_linear_57_2" x1="958.116" y1="-130" x2="2231.03" y2="595.58" gradientUnits="userSpaceOnUse">
+<stop stop-color="#121A42" />
+<stop offset="0.45" stop-color="#315FCC" />
+<stop offset="0.7" stop-color="#00D4C8" />
+<stop offset="1" stop-color="#7750BD" />
+</linearGradient>
+<linearGradient id="paint2_linear_57_2" x1="-180" y1="150" x2="948.377" y2="1340.54" gradientUnits="userSpaceOnUse">
+<stop stop-color="#06372E" />
+<stop offset="0.48" stop-color="#00CA98" />
+<stop offset="1" stop-color="#004D4F" />
+</linearGradient>
+<linearGradient id="paint3_linear_57_2" x1="0" y1="0" x2="0" y2="1200" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00070D" stop-opacity="0.25" />
+<stop offset="0.4" stop-color="#00070D" stop-opacity="0.5" />
+<stop offset="1" stop-color="#00070D" stop-opacity="0.15" />
+</linearGradient>
+<clipPath id="clip0_57_2">
+<rect width="1920" height="1200" rx="28" fill="white" />
+</clipPath>
+<clipPath id="clip1_57_2">
+<rect width="1920" height="1200" fill="white" />
+</clipPath>
+<clipPath id="clip2_57_2">
+<rect width="58" height="14" fill="white" transform="translate(108 284)" />
+</clipPath>
+<clipPath id="clip3_57_2">
+<rect x="936" y="350" width="840" height="666" rx="14" fill="white" />
+</clipPath>
+<clipPath id="clip5_57_2">
+<rect width="58" height="58" fill="white" transform="translate(517 1083)" />
+</clipPath>
+<clipPath id="clip6_57_2">
+<rect width="58" height="58" fill="white" transform="translate(605 1083)" />
+</clipPath>
+<clipPath id="clip7_57_2">
+<rect width="58" height="58" fill="white" transform="translate(693 1083)" />
+</clipPath>
+<clipPath id="clip8_57_2">
+<rect width="58" height="58" fill="white" transform="translate(781 1083)" />
+</clipPath>
+<clipPath id="clip9_57_2">
+<rect width="58" height="58" fill="white" transform="translate(869 1083)" />
+</clipPath>
+<clipPath id="clip10_57_2">
+<rect width="58" height="58" fill="white" transform="translate(957 1083)" />
+</clipPath>
+<clipPath id="clip11_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1045 1083)" />
+</clipPath>
+<clipPath id="clip12_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1133 1083)" />
+</clipPath>
+<clipPath id="clip13_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1221 1083)" />
+</clipPath>
+<clipPath id="clip14_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1320 1083)" />
+</clipPath>
+</defs>
+</svg>

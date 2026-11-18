@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="693.0 1083.0 58 58"><g clip-path="url(#clip7_57_2)">
+<path d="M737.406 1083.91H706.594C699.587 1083.91 693.906 1089.59 693.906 1096.59V1127.41C693.906 1134.41 699.587 1140.09 706.594 1140.09H737.406C744.413 1140.09 750.094 1134.41 750.094 1127.41V1096.59C750.094 1089.59 744.413 1083.91 737.406 1083.91Z" fill="#F4F7FB" stroke="white" stroke-opacity="0.18" />
+<path d="M722 1134.66C734.513 1134.66 744.656 1124.51 744.656 1112C744.656 1099.49 734.513 1089.34 722 1089.34C709.487 1089.34 699.344 1099.49 699.344 1112C699.344 1124.51 709.487 1134.66 722 1134.66Z" fill="#1D9CE4" />
+<path d="M741.025 1111.5C741.029 1111.67 741.031 1111.83 741.031 1112C741.031 1112.17 741.029 1112.33 741.025 1112.5M740.509 1107.56C740.432 1107.23 740.346 1106.91 740.252 1106.59M738.728 1102.92C738.569 1102.63 738.403 1102.34 738.229 1102.06M735.805 1098.9C735.576 1098.66 735.341 1098.42 735.1 1098.2M731.945 1095.77C731.662 1095.6 731.375 1095.43 731.082 1095.27M727.407 1093.75C727.09 1093.65 726.769 1093.57 726.445 1093.49M722.5 1092.98C722.334 1092.97 722.167 1092.97 722 1092.97C721.833 1092.97 721.666 1092.97 721.5 1092.98M717.555 1093.49C717.231 1093.57 716.91 1093.65 716.593 1093.75M712.918 1095.27C712.625 1095.43 712.338 1095.6 712.055 1095.77M708.9 1098.2C708.659 1098.42 708.424 1098.66 708.195 1098.9M705.771 1102.06C705.597 1102.34 705.431 1102.63 705.272 1102.92M703.748 1106.59C703.654 1106.91 703.568 1107.23 703.491 1107.56M702.975 1111.5C702.971 1111.67 702.969 1111.83 702.969 1112C702.969 1112.17 702.971 1112.33 702.975 1112.5M703.491 1116.44C703.568 1116.77 703.654 1117.09 703.748 1117.41M705.272 1121.08C705.431 1121.37 705.597 1121.66 705.771 1121.94M708.195 1125.1C708.424 1125.34 708.659 1125.58 708.9 1125.8M712.055 1128.23C712.338 1128.4 712.625 1128.57 712.918 1128.73M716.593 1130.25C716.91 1130.35 717.231 1130.43 717.555 1130.51M721.5 1131.02C721.666 1131.03 721.833 1131.03 722 1131.03C722.167 1131.03 722.334 1131.03 722.5 1131.02M726.445 1130.51C726.769 1130.43 727.09 1130.35 727.407 1130.25M731.082 1128.73C731.375 1128.57 731.662 1128.4 731.945 1128.23M735.1 1125.8C735.341 1125.58 735.576 1125.34 735.805 1125.1M738.229 1121.94C738.403 1121.66 738.569 1121.37 738.728 1121.08M740.252 1117.41C740.346 1117.09 740.432 1116.77 740.509 1116.44" stroke-width="2" stroke="#B3E4FD" />
+<path d="M711.125 1122.88L718.375 1107.47L732.875 1101.12L725.625 1116.53L711.125 1122.88Z" fill="#FA594D" />
+<path d="M711.125 1122.88L718.375 1107.47L725.625 1116.53L711.125 1122.88Z" fill="white" />
+</g>
+<defs>
+<filter id="filter0_d_57_2" x="468" y="1044" width="953" height="156" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="10" />
+<feGaussianBlur stdDeviation="12" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_57_2" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_57_2" result="shape" />
+</filter>
+<clipPath id="bgblur_4_57_2_clip_path" transform="translate(-468 -1044)"><rect x="492" y="1068" width="905" height="98" rx="23" />
+</clipPath><linearGradient id="paint0_linear_57_2" x1="0" y1="0" x2="1078.65" y2="1725.84" gradientUnits="userSpaceOnUse">
+<stop stop-color="#001B22" />
+<stop offset="0.5" stop-color="#02090E" />
+<stop offset="1" stop-color="#061E38" />
+</linearGradient>
+<linearGradient id="paint1_linear_57_2" x1="958.116" y1="-130" x2="2231.03" y2="595.58" gradientUnits="userSpaceOnUse">
+<stop stop-color="#121A42" />
+<stop offset="0.45" stop-color="#315FCC" />
+<stop offset="0.7" stop-color="#00D4C8" />
+<stop offset="1" stop-color="#7750BD" />
+</linearGradient>
+<linearGradient id="paint2_linear_57_2" x1="-180" y1="150" x2="948.377" y2="1340.54" gradientUnits="userSpaceOnUse">
+<stop stop-color="#06372E" />
+<stop offset="0.48" stop-color="#00CA98" />
+<stop offset="1" stop-color="#004D4F" />
+</linearGradient>
+<linearGradient id="paint3_linear_57_2" x1="0" y1="0" x2="0" y2="1200" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00070D" stop-opacity="0.25" />
+<stop offset="0.4" stop-color="#00070D" stop-opacity="0.5" />
+<stop offset="1" stop-color="#00070D" stop-opacity="0.15" />
+</linearGradient>
+<clipPath id="clip0_57_2">
+<rect width="1920" height="1200" rx="28" fill="white" />
+</clipPath>
+<clipPath id="clip1_57_2">
+<rect width="1920" height="1200" fill="white" />
+</clipPath>
+<clipPath id="clip2_57_2">
+<rect width="58" height="14" fill="white" transform="translate(108 284)" />
+</clipPath>
+<clipPath id="clip3_57_2">
+<rect x="936" y="350" width="840" height="666" rx="14" fill="white" />
+</clipPath>
+<clipPath id="clip5_57_2">
+<rect width="58" height="58" fill="white" transform="translate(517 1083)" />
+</clipPath>
+<clipPath id="clip6_57_2">
+<rect width="58" height="58" fill="white" transform="translate(605 1083)" />
+</clipPath>
+<clipPath id="clip7_57_2">
+<rect width="58" height="58" fill="white" transform="translate(693 1083)" />
+</clipPath>
+<clipPath id="clip8_57_2">
+<rect width="58" height="58" fill="white" transform="translate(781 1083)" />
+</clipPath>
+<clipPath id="clip9_57_2">
+<rect width="58" height="58" fill="white" transform="translate(869 1083)" />
+</clipPath>
+<clipPath id="clip10_57_2">
+<rect width="58" height="58" fill="white" transform="translate(957 1083)" />
+</clipPath>
+<clipPath id="clip11_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1045 1083)" />
+</clipPath>
+<clipPath id="clip12_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1133 1083)" />
+</clipPath>
+<clipPath id="clip13_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1221 1083)" />
+</clipPath>
+<clipPath id="clip14_57_2">
+<rect width="58" height="58" fill="white" transform="translate(1320 1083)" />
+</clipPath>
+</defs>
+</svg>
