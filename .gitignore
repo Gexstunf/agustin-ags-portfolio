@@ -6,3 +6,6 @@ reference/
 qa/
 *.tar.gz
 *.tsbuildinfo
+
+.vercel
+.env*
