@@ -806,3 +806,28 @@
   border-color: #82ddd480;
   cursor: grabbing;
 }
+.code-studio {
+  min-height: 390px;
+  padding: 24px;
+  gap: 14px;
+}
+.code-studio .code-window {
+  flex-shrink: 0;
+}
+.code-studio-footer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+@media (max-width: 760px) {
+  .code-studio {
+    min-height: 410px;
+    flex-shrink: 0;
+    padding: 20px 13px;
+  }
+  .code-studio-footer {
+    justify-content: center;
+  }
+}
