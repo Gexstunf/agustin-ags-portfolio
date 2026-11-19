@@ -6,12 +6,9 @@ import { useSceneEffects } from "./SceneEffects";
 const sample = `const agustin = {
   curiosidad: true,
   crear: ["código", "diseño"],
-  trabajar: "en equipo"
-};
-
-function siguientePaso() {
-  return "Seguir aprendiendo";
-}`;
+  trabajar: "en equipo",
+  futuro: "Seguir aprendiendo"
+};`;
 function Syntax({ text }: { text: string }) {
   return (
     <>
@@ -68,7 +65,7 @@ export function CodeStudio({ explore }: { explore: () => void }) {
         </div>
         <div className="live-code-body" aria-hidden="true">
           <div className="code-lines">
-            {Array.from({ length: 10 }, (_, i) => (
+            {Array.from({ length: sample.split("\n").length }, (_, i) => (
               <span
                 key={i}
                 className={

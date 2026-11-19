@@ -131,9 +131,6 @@ export function SyncDemo() {
           Eliminar
         </button>
       </div>
-      <p className="replication-caption">
-        Lo que cambia en un jugador también debe actualizarse en el otro.
-      </p>
     </section>
   );
 }

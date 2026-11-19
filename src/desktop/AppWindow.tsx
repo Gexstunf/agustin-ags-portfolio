@@ -10,7 +10,6 @@ import {
   useDragControls,
   useMotionValue,
   useReducedMotion,
-  AnimatePresence,
 } from "motion/react";
 import type { AppDefinition, AppId } from "./apps";
 import type { WindowState } from "./windowState";
@@ -18,8 +17,6 @@ import { Sections } from "../content/Sections";
 import type { MediaItem } from "../components/Media";
 import { SceneEffects } from "../components/effects/SceneEffects";
 import { Pause, Play, RotateCcw } from "lucide-react";
-import { ViewNavigation } from "../components/ViewNavigation";
-import { sectionViews } from "../content/views";
 import { desktopDragBounds } from "./dragBounds";
 interface Props {
   app: AppDefinition;
@@ -47,7 +44,6 @@ export function AppWindow({
   const y = useMotionValue(0);
   const reduced = useReducedMotion();
   const [effectsPaused, setEffectsPaused] = useState(false);
-  const [view, setView] = useState(0);
   const [dragBounds, setDragBounds] = useState({
     left: -180,
     right: 180,
@@ -95,7 +91,7 @@ export function AppWindow({
   }, [x, y]);
   useEffect(() => {
     if (active) scroll.current?.focus({ preventScroll: true });
-  }, [active, view]);
+  }, [active]);
   const dockButton = document.querySelector(`[data-app="${app.id}"]`);
   const dockRect = dockButton?.getBoundingClientRect();
   const stageRect = bounds.current?.getBoundingClientRect();
@@ -217,14 +213,6 @@ export function AppWindow({
           {effectsPaused ? <Play size={13} /> : <Pause size={13} />}
         </button>
       </header>
-      <div className="window-navigation-shell" inert={!active}>
-        <ViewNavigation
-          name={app.name}
-          labels={sectionViews[app.id]}
-          index={view}
-          onChange={setView}
-        />
-      </div>
       <div
         className={`window-content paged-content content-${app.id}`}
         tabIndex={-1}
@@ -232,19 +220,9 @@ export function AppWindow({
         inert={!active}
       >
         <SceneEffects enabled={active && !state.minimized && !effectsPaused}>
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={view}
-              className="section-view"
-              data-view={view}
-              initial={reduced ? false : { opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -4 }}
-              transition={{ duration: effectsPaused ? 0 : 0.13 }}
-            >
-              <Sections id={app.id} view={view} open={open} expand={expand} />
-            </motion.div>
-          </AnimatePresence>
+          <div className="section-view">
+            <Sections id={app.id} open={open} expand={expand} />
+          </div>
         </SceneEffects>
       </div>
     </motion.section>

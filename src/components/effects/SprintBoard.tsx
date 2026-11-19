@@ -6,8 +6,8 @@ const initial = [
   { id: "interfaz", name: "Interfaz", column: 0 },
   { id: "objetos", name: "Objetos", column: 0 },
   { id: "escenarios", name: "Escenarios", column: 1 },
-  { id: "programacion", name: "Programación", column: 1 },
-  { id: "multijugador", name: "Multijugador", column: 2 },
+  { id: "programacion", name: "Código", column: 1 },
+  { id: "multijugador", name: "Photon", column: 2 },
   { id: "pruebas", name: "Pruebas", column: 2 },
 ];
 export function SprintBoard() {
