@@ -40,8 +40,7 @@ export function Sections({ id, open, expand }: Props) {
           <p className="ags-label">Agustín / perfil personal</p>
           <h2>
             Soy
-            <br />
-            Agustín.
+            <br /> Agustín.
           </h2>
           <p>
             Desde chico quería programar. De los 15 a los 18 años pasé de la
@@ -203,8 +202,7 @@ export function Sections({ id, open, expand }: Props) {
           <p className="ags-label">El modelo de datos</p>
           <h2>
             Lo que sostiene
-            <br />
-            una aplicación.
+            <br /> una aplicación.
           </h2>
 
           <div className="overview-relationships">
@@ -290,8 +288,7 @@ export function Sections({ id, open, expand }: Props) {
               <img src="/assets/out-of-reach.png" alt="Out of Reach" />
               <h2>
                 El miedo se mezcla
-                <br />
-                con la risa.
+                <br /> con la risa.
               </h2>
             </div>
             <p>
@@ -327,7 +324,7 @@ export function Sections({ id, open, expand }: Props) {
           <div className="out-original-content">
             <h2>
               De jugar
-              <br />a crear.
+              <br /> a crear.
             </h2>
             <p>
               <span className="desktop-copy">
@@ -392,8 +389,7 @@ export function Sections({ id, open, expand }: Props) {
         <p className="ags-label">Aprender en equipo</p>
         <h2>
           Una idea se convierte
-          <br />
-          en tareas compartidas.
+          <br /> en tareas compartidas.
         </h2>
         <p>
           <span className="desktop-copy">
