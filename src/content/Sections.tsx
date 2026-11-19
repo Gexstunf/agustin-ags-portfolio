@@ -1,6 +1,4 @@
-import { useState } from "react";
 import {
-  Check,
   Code2,
   Gamepad2,
   HeartHandshake,
@@ -16,6 +14,14 @@ import {
 import type { AppId } from "../desktop/apps";
 import { AppIcon } from "../components/AppIcon";
 import { Media, type MediaItem } from "../components/Media";
+import { CodeStudio } from "../components/effects/CodeStudio";
+import {
+  DataConnections,
+  NeuralSignals,
+  ReplayEffect,
+  SyncDemo,
+} from "../components/effects/TechEffects";
+import { SprintBoard } from "../components/effects/SprintBoard";
 interface Props {
   id: AppId;
   open: (id: AppId) => void;
@@ -73,18 +79,7 @@ function Home({ open }: Pick<Props, "open">) {
           Explorar mi recorrido
         </button>
       </div>
-      <button
-        className="workspace-art"
-        onClick={() => open("universo")}
-        aria-label="Explorar mi universo"
-      >
-        <img
-          className="workspace-original"
-          src="/assets/workspace.svg"
-          alt="Ventana de programación de mi espacio AGS"
-        />
-        <span className="art-hint">Conocé mi universo</span>
-      </button>
+      <CodeStudio explore={() => open("universo")} />
     </div>
   );
 }
@@ -192,6 +187,12 @@ function Journey({ open }: Pick<Props, "open">) {
           </button>
         ))}
       </div>
+      <div className="journey-trail" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <i />
+      </div>
       <div className="journey-summary">
         <p>
           Empecé con ganas de aprender y pocas ideas sobre tecnología. A lo
@@ -271,6 +272,7 @@ function Systems({ expand }: Pick<Props, "expand">) {
           src="/assets/der.png"
           alt="Modelo de datos de recetas, ingredientes, usuarios y planificación de comidas"
           caption="Modelo de recetas y comidas · Proyecto de Frontend Backend."
+          decoration={<DataConnections />}
           onExpand={expand}
         />
       </div>
@@ -321,6 +323,7 @@ function ThreeD({ expand }: Pick<Props, "expand">) {
           <img
             src="/assets/soldado.png"
             alt="Modelo 3D de un soldado del proyecto Malvinas"
+            className="character-visual"
           />
           <div>
             <h2>
@@ -403,6 +406,7 @@ function OutOfReach({ expand, open }: Pick<Props, "expand" | "open">) {
             entre los jugadores.
           </p>
         </section>
+        <SyncDemo />
         <section className="anecdote">
           <span className="mono cyan">Entre pruebas y partidas</span>
           <p>
@@ -421,12 +425,15 @@ function AI({ expand }: Pick<Props, "expand">) {
       <section className="panel">
         <p className="eyebrow lavender">Explorar el modelo</p>
         <h2>De una idea a una prueba.</h2>
-        <Media
-          src="/assets/perceptron.png"
-          alt="Esquema de un perceptrón con entradas, pesos y salida"
-          caption="Esquema del perceptrón incluido en el moodboard como referencia para entender sus entradas, procesamiento y salida."
-          onExpand={expand}
-        />
+        <ReplayEffect label="Repetir recorrido de datos">
+          <Media
+            src="/assets/perceptron.png"
+            alt="Esquema de un perceptrón con entradas, pesos y salida"
+            caption="Esquema del perceptrón incluido en el moodboard como referencia para entender sus entradas, procesamiento y salida."
+            decoration={<NeuralSignals />}
+            onExpand={expand}
+          />
+        </ReplayEffect>
       </section>
       <section className="panel">
         <p className="eyebrow blue">Observar los resultados</p>
@@ -448,13 +455,7 @@ function AI({ expand }: Pick<Props, "expand">) {
     </div>
   );
 }
-const initialSprint = [
-  { title: "Por hacer", tasks: ["Interfaz", "Objetos"] },
-  { title: "En curso", tasks: ["Escenarios", "Programación"] },
-  { title: "Para revisar", tasks: ["Multijugador", "Pruebas"] },
-];
 function Method() {
-  const [checked, setChecked] = useState<string[]>([]);
   return (
     <div className="method-layout">
       <section className="sprint-area">
@@ -470,35 +471,10 @@ function Method() {
           integrante dé lo mejor.
         </p>
         <p className="mono cyan sprint-caption">Ejemplo visual de un sprint</p>
-        <div className="sprint-board">
-          {initialSprint.map((column) => (
-            <section key={column.title}>
-              <h3>{column.title}</h3>
-              {column.tasks.map((task) => (
-                <button
-                  key={task}
-                  className={checked.includes(task) ? "done" : ""}
-                  onClick={() =>
-                    setChecked((prev) =>
-                      prev.includes(task)
-                        ? prev.filter((t) => t !== task)
-                        : [...prev, task],
-                    )
-                  }
-                  aria-pressed={checked.includes(task)}
-                >
-                  <span className="task-check">
-                    {checked.includes(task) && <Check size={12} />}
-                  </span>
-                  {task}
-                </button>
-              ))}
-            </section>
-          ))}
-        </div>
+        <SprintBoard />
         <p className="subtle sprint-note">
-          Probá marcar una tarea. Es una forma de hacer visible el trabajo y
-          coordinar al equipo.
+          Arrastrá las tareas o usá su botón para moverlas. También podés
+          marcarlas como completadas.
         </p>
       </section>
       <section className="panel method-steps">

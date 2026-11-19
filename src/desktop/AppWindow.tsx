@@ -9,6 +9,8 @@ import type { AppDefinition, AppId } from "./apps";
 import type { WindowState } from "./windowState";
 import { Sections } from "../content/Sections";
 import type { MediaItem } from "../components/Media";
+import { SceneEffects } from "../components/effects/SceneEffects";
+import { Pause, Play } from "lucide-react";
 interface Props {
   app: AppDefinition;
   state: WindowState;
@@ -34,6 +36,7 @@ export function AppWindow({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const reduced = useReducedMotion();
+  const [effectsPaused, setEffectsPaused] = useState(false);
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width: 760px)").matches,
   );
@@ -138,6 +141,23 @@ export function AppWindow({
         </div>
         <span className="window-title">{app.window}</span>
         <span className="window-shortname mono">AGS</span>
+        <button
+          className="effects-toggle"
+          aria-label={
+            effectsPaused
+              ? "Activar efectos visuales"
+              : "Pausar efectos visuales"
+          }
+          title={
+            effectsPaused
+              ? "Activar efectos visuales"
+              : "Pausar efectos visuales"
+          }
+          onClick={() => setEffectsPaused((paused) => !paused)}
+          aria-pressed={!effectsPaused}
+        >
+          {effectsPaused ? <Play size={13} /> : <Pause size={13} />}
+        </button>
       </header>
       <div
         className={`window-content content-${app.id}`}
@@ -145,7 +165,9 @@ export function AppWindow({
         ref={scroll}
         inert={!active}
       >
-        <Sections id={app.id} open={open} expand={expand} />
+        <SceneEffects enabled={active && !state.minimized && !effectsPaused}>
+          <Sections id={app.id} open={open} expand={expand} />
+        </SceneEffects>
       </div>
     </motion.section>
   );

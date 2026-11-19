@@ -1,4 +1,5 @@
 import { Maximize2 } from "lucide-react";
+import type { ReactNode } from "react";
 export interface MediaItem {
   src: string;
   alt: string;
@@ -10,7 +11,12 @@ export function Media({
   caption,
   onExpand,
   className = "",
-}: MediaItem & { onExpand: (item: MediaItem) => void; className?: string }) {
+  decoration,
+}: MediaItem & {
+  onExpand: (item: MediaItem) => void;
+  className?: string;
+  decoration?: ReactNode;
+}) {
   return (
     <figure className={`media ${className}`}>
       <button
@@ -19,6 +25,8 @@ export function Media({
         aria-label={`Ampliar: ${alt}`}
       >
         <img src={src} alt={alt} loading="lazy" />
+        {decoration}
+        <span className="media-sheen" aria-hidden="true" />
         <span className="expand-icon">
           <Maximize2 size={16} />
         </span>

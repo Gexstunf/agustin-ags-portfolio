@@ -41,6 +41,12 @@ Los recursos proceden de AGS y del moodboard del mismo archivo. Las pantallas de
 
 Las imágenes 3D actuales son las imágenes de Figma. Un visor 3D interactivo requiere los archivos de los modelos; no se incluye un modelo de muestra ajeno para sustituirlos.
 
-## Verificación
+## Efectos dentro de las secciones
+
+El inicio incluye escritura progresiva de TypeScript con colores y cursor. Las tarjetas del recorrido entran de forma escalonada y una luz recorre su línea de tiempo. Los diagramas de Sistemas e IA tienen señales animadas; el de IA permite repetir el recorrido. Out of Reach incorpora una simulación visual del estado compartido entre dos jugadores. Las imágenes y herramientas responden al cursor con reflejos y movimientos suaves.
+
+El tablero de Método permite arrastrar tareas desde su agarre, moverlas con botones y completarlas con una marca animada. La barra de cada ventana permite pausar sus efectos. Los efectos se detienen cuando la ventana deja de estar activa o la pestaña está oculta, y respetan la preferencia del sistema de reducir el movimiento. Las secuencias automáticas son breves y no se repiten indefinidamente.
+
+## Verificación de la implementación
 
 `npm test` comprueba el ciclo de vida de las ventanas y la validación de rutas. `npm run build` ejecuta TypeScript y genera la versión optimizada. La revisión en navegador incluye apertura y restauración de ventanas, ampliación de imágenes, zoom, búsqueda y una vista móvil de 390 px.
