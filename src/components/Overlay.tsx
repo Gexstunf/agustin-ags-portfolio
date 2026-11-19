@@ -129,7 +129,7 @@ export function Overlay({ kind, close, open }: Props) {
             <h2>
               Un escritorio.
               <br />
-              Mi recorrido en TIC.
+              Mi recorrido creativo.
             </h2>
             <p>
               Abrí las secciones desde el dock o explorá los tres proyectos de

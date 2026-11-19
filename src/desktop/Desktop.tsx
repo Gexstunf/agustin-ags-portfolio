@@ -62,7 +62,7 @@ export function Desktop() {
   useEffect(() => {
     document.title = active
       ? `${active.name} · Agustín`
-      : "Agustín · Portfolio TIC";
+      : "Agustín · Portfolio personal";
   }, [active]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {

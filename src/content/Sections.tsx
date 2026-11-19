@@ -46,7 +46,7 @@ export function Sections({ id, open, expand }: Props) {
         <div className="overview-copy">
           <h2>Soy Agustín.</h2>
           <p>
-            Elegí TIC para aprender a programar. En tres años pasé de la
+            Desde chico quería programar. De los 15 a los 18 años pasé de la
             curiosidad a crear proyectos en equipo.
           </p>
           <p>
@@ -114,21 +114,21 @@ export function Sections({ id, open, expand }: Props) {
           {[
             {
               id: "portal",
-              year: "3.º año",
+              age: "15–16 años",
               name: "Portal",
               image: "portal",
               text: "Un campus para conectar alumnos y profesores.",
             },
             {
               id: "out-of-reach",
-              year: "4.º año",
+              age: "16–17 años",
               name: "Out of Reach",
               image: "out-of-reach",
               text: "Miedo, humor y amigos en un juego multijugador.",
             },
             {
               id: "3d",
-              year: "5.º año",
+              age: "17–18 años",
               name: "Malvinas",
               image: "malvinas",
               text: "Relato y minimisiones para generar conciencia.",
@@ -137,7 +137,7 @@ export function Sections({ id, open, expand }: Props) {
             <button key={p.id} onClick={() => open(p.id as AppId)}>
               <img src={`/assets/${p.image}.png`} alt="" />
               <div>
-                <span className="project-year">{p.year}</span>
+                <span className="project-age">{p.age}</span>
                 <h3>{p.name}</h3>
                 <p>{p.text}</p>
               </div>
@@ -179,8 +179,8 @@ export function Sections({ id, open, expand }: Props) {
         <div className="overview-copy">
           <h2>La estructura detrás de una aplicación.</h2>
           <p>
-            Un modelo de recetas y comidas del proyecto de Frontend Backend:
-            diseñar una web con determinadas condiciones.
+            Un modelo de datos para una web de recetas y comidas: conectar
+            ingredientes, usuarios y planes de alimentación.
           </p>
           <div className="overview-relationships">
             <Note title="Recetas e ingredientes">

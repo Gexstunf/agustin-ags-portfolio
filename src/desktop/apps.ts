@@ -23,8 +23,8 @@ export const apps = [
     app: "Safari",
     title: "De aprender a crear.",
     subtitle:
-      "Tres años en TIC: ideas, herramientas y proyectos que cambiaron mi forma de crear.",
-    window: "Mi recorrido / 3.º a 5.º año",
+      "De los 15 a los 18 años: ideas y proyectos que cambiaron mi forma de crear.",
+    window: "Mi recorrido / De los 15 a los 18 años",
     icon: "safari",
   },
   {

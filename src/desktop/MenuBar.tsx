@@ -103,7 +103,7 @@ export function MenuBar({
           className="system-decoration"
           aria-hidden="true"
         />
-        <span className="desktop-label">Portfolio TIC</span>
+        <span className="desktop-label">Portfolio AGS</span>
         <time dateTime={clock.toISOString()}>
           {new Intl.DateTimeFormat("es-AR", {
             weekday: "short",
