@@ -645,6 +645,10 @@
 .mobile-copy {
   display: none;
 }
+/* This transparent diagram uses black labels, including in the image viewer. */
+img[src$="/perceptron.png"] {
+  background: #fff;
+}
 @media (min-width: 761px) {
   .dock {
     translate: -50% 0;
