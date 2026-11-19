@@ -69,7 +69,16 @@ export function CodeStudio({ explore }: { explore: () => void }) {
         <div className="live-code-body" aria-hidden="true">
           <div className="code-lines">
             {Array.from({ length: 10 }, (_, i) => (
-              <span key={i}>{i + 1}</span>
+              <span
+                key={i}
+                className={
+                  i === display.split("\n").length - 1
+                    ? "code-current-line"
+                    : undefined
+                }
+              >
+                {i + 1}
+              </span>
             ))}
           </div>
           <pre>
@@ -78,6 +87,11 @@ export function CodeStudio({ explore }: { explore: () => void }) {
               <span className="typing-cursor" />
             </code>
           </pre>
+        </div>
+        <div className="typing-progress" aria-hidden="true">
+          <span
+            style={{ width: `${(reduced ? 1 : count / sample.length) * 100}%` }}
+          />
         </div>
         <div className="code-status mono">
           <span>TypeScript</span>

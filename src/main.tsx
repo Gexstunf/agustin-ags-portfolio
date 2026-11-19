@@ -8,6 +8,7 @@ import { Desktop } from "./desktop/Desktop";
 import "./styles/global.css";
 import "./styles/refinements.css";
 import "./styles/effects.css";
+import "./styles/pages.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Desktop />

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { RotateCcw, Box, Check } from "lucide-react";
-import { useSceneEffects } from "./SceneEffects";
+import { RotateCcw } from "lucide-react";
 
 export function DataConnections() {
   return (
@@ -89,51 +88,5 @@ export function ReplayEffect({
         {label}
       </button>
     </div>
-  );
-}
-export function SyncDemo() {
-  const [iteration, setIteration] = useState(0);
-  const enabled = useSceneEffects();
-  return (
-    <section
-      className="sync-demo"
-      aria-label="Simulación visual de sincronización multijugador"
-    >
-      <div className="sync-heading">
-        <span className="mono lavender">Sincronización / ejemplo visual</span>
-        <button
-          className="effect-replay"
-          onClick={() => setIteration((i) => i + 1)}
-          aria-label="Repetir sincronización"
-        >
-          <RotateCcw size={14} />
-        </button>
-      </div>
-      <div className="sync-stage" key={iteration}>
-        <div className="player-view">
-          <span className="mono">Jugador 1</span>
-          <div className="sync-floor">
-            <span className="sync-cargo source-cargo">
-              <Box size={24} />
-            </span>
-          </div>
-        </div>
-        <div className="sync-connection" aria-hidden="true">
-          <span />
-          <i />
-        </div>
-        <div className="player-view">
-          <span className="mono">Jugador 2</span>
-          <div className="sync-floor">
-            <span className="sync-cargo remote-cargo">
-              <Box size={24} />
-            </span>
-          </div>
-        </div>
-        <p className={`sync-confirmation ${!enabled ? "is-static" : ""}`}>
-          <Check size={13} /> El mismo objeto, un estado compartido.
-        </p>
-      </div>
-    </section>
   );
 }

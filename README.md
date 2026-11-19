@@ -22,6 +22,8 @@ La versión de producción se genera en `dist/`. Es una aplicación estática: n
 - `src/desktop/AppWindow.tsx`: ventana arrastrable, controles y transiciones.
 - `src/desktop/Dock.tsx` y `MenuBar.tsx`: navegación y controles del escritorio.
 - `src/content/Sections.tsx`: contenido de las nueve secciones, dividido en componentes.
+- `src/content/views.ts`: las 27 vistas breves y sus etiquetas de navegación.
+- `src/desktop/dragBounds.ts`: límites de arrastre que se adaptan al escritorio completo.
 - `src/components`: iconos, imágenes ampliables, búsqueda y ayuda.
 - `src/styles`: estilos organizados en capas y adaptación a pantallas pequeñas.
 - `public/assets`: imágenes e iconos originales exportados de Figma y guardados localmente.
@@ -30,6 +32,8 @@ La versión de producción se genera en `dist/`. Es una aplicación estática: n
 ## Interacciones
 
 Las ventanas se abren desde el dock; se pueden cerrar, minimizar, restaurar y ampliar. En computadora se arrastran desde su barra superior. La minimización conserva el estado del contenido durante la sesión. El dock indica las ventanas abiertas y minimizadas.
+
+El contenido se organiza en vistas completas, con pestañas en escritorio y un selector en móvil, para leer sin desplazamiento vertical. Las ventanas pueden moverse por todo el escritorio manteniendo parte de la barra accesible; un botón permite volver a centrarlas. Al pasar a móvil se restablece su posición.
 
 La búsqueda se abre con Ctrl/⌘ + K. Alt + 1 a 9 abre las secciones. Las imágenes tienen un visor con zoom y se cierra con Escape. Las tareas del tablero de Método son una demostración interactiva, no un registro histórico del proyecto.
 
@@ -43,10 +47,10 @@ Las imágenes 3D actuales son las imágenes de Figma. Un visor 3D interactivo re
 
 ## Efectos dentro de las secciones
 
-El inicio incluye escritura progresiva de TypeScript con colores y cursor. Las tarjetas del recorrido entran de forma escalonada y una luz recorre su línea de tiempo. Los diagramas de Sistemas e IA tienen señales animadas; el de IA permite repetir el recorrido. Out of Reach incorpora una simulación visual del estado compartido entre dos jugadores. Las imágenes y herramientas responden al cursor con reflejos y movimientos suaves.
+La vista de código incluye escritura progresiva de TypeScript con colores, cursor, línea activa y progreso. Los proyectos se presentan en vistas individuales. Los diagramas de Sistemas e IA tienen señales animadas; el de IA permite repetir el recorrido. Out of Reach incorpora una simulación en la que se pueden crear, mover y eliminar objetos: las acciones del primer jugador se replican en el segundo. Las imágenes y herramientas responden al cursor con reflejos y movimientos suaves.
 
 El tablero de Método permite arrastrar tareas desde su agarre, moverlas con botones y completarlas con una marca animada. La barra de cada ventana permite pausar sus efectos. Los efectos se detienen cuando la ventana deja de estar activa o la pestaña está oculta, y respetan la preferencia del sistema de reducir el movimiento. Las secuencias automáticas son breves y no se repiten indefinidamente.
 
 ## Verificación de la implementación
 
-`npm test` comprueba el ciclo de vida de las ventanas y la validación de rutas. `npm run build` ejecuta TypeScript y genera la versión optimizada. La revisión en navegador incluye apertura y restauración de ventanas, ampliación de imágenes, zoom, búsqueda y una vista móvil de 390 px.
+`npm test` comprueba el ciclo de vida de las ventanas, rutas y límites de arrastre. `npm run build` ejecuta TypeScript y genera la versión optimizada. Las 27 vistas se verificaron sin desbordamiento de contenido a 1280 × 900, 390 × 844 y 390 × 740. También se comprobaron en navegador el arrastre ampliado y la creación, el movimiento y la eliminación replicados entre jugadores.

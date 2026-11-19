@@ -1,16 +1,26 @@
-import { useEffect, useRef, useState, type RefObject } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type RefObject,
+} from "react";
 import {
   motion,
   useDragControls,
   useMotionValue,
   useReducedMotion,
+  AnimatePresence,
 } from "motion/react";
 import type { AppDefinition, AppId } from "./apps";
 import type { WindowState } from "./windowState";
 import { Sections } from "../content/Sections";
 import type { MediaItem } from "../components/Media";
 import { SceneEffects } from "../components/effects/SceneEffects";
-import { Pause, Play } from "lucide-react";
+import { Pause, Play, RotateCcw } from "lucide-react";
+import { ViewNavigation } from "../components/ViewNavigation";
+import { sectionViews } from "../content/views";
+import { desktopDragBounds } from "./dragBounds";
 interface Props {
   app: AppDefinition;
   state: WindowState;
@@ -37,19 +47,55 @@ export function AppWindow({
   const y = useMotionValue(0);
   const reduced = useReducedMotion();
   const [effectsPaused, setEffectsPaused] = useState(false);
+  const [view, setView] = useState(0);
+  const [dragBounds, setDragBounds] = useState({
+    left: -180,
+    right: 180,
+    top: -20,
+    bottom: 80,
+  });
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width: 760px)").matches,
   );
   const scroll = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const stage = bounds.current;
+    if (!stage) return;
+    const update = () => {
+      const rect = stage.getBoundingClientRect();
+      const limits = desktopDragBounds(rect, {
+        width: innerWidth,
+        height: innerHeight,
+      });
+      setDragBounds(limits);
+      x.set(Math.max(limits.left, Math.min(limits.right, x.get())));
+      y.set(Math.max(limits.top, Math.min(limits.bottom, y.get())));
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(stage);
+    window.addEventListener("resize", update);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", update);
+    };
+  }, [bounds, x, y]);
   useEffect(() => {
     const mq = matchMedia("(max-width: 760px)");
-    const update = () => setMobile(mq.matches);
+    const update = () => {
+      setMobile(mq.matches);
+      if (mq.matches) {
+        x.set(0);
+        y.set(0);
+      }
+    };
+    update();
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
-  }, []);
+  }, [x, y]);
   useEffect(() => {
     if (active) scroll.current?.focus({ preventScroll: true });
-  }, [active]);
+  }, [active, view]);
   const dockButton = document.querySelector(`[data-app="${app.id}"]`);
   const dockRect = dockButton?.getBoundingClientRect();
   const stageRect = bounds.current?.getBoundingClientRect();
@@ -97,7 +143,7 @@ export function AppWindow({
       drag={!mobile && !state.maximized}
       dragListener={false}
       dragControls={controls}
-      dragConstraints={{ left: -180, right: 180, top: -20, bottom: 80 }}
+      dragConstraints={dragBounds}
       dragElastic={0.08}
       dragMomentum={false}
       onPointerDownCapture={() => {
@@ -142,6 +188,18 @@ export function AppWindow({
         <span className="window-title">{app.window}</span>
         <span className="window-shortname mono">AGS</span>
         <button
+          className="center-window"
+          aria-label={`Centrar ${app.name}`}
+          title="Centrar ventana"
+          disabled={state.maximized}
+          onClick={() => {
+            x.set(0);
+            y.set(0);
+          }}
+        >
+          <RotateCcw size={13} />
+        </button>
+        <button
           className="effects-toggle"
           aria-label={
             effectsPaused
@@ -159,14 +217,34 @@ export function AppWindow({
           {effectsPaused ? <Play size={13} /> : <Pause size={13} />}
         </button>
       </header>
+      <div className="window-navigation-shell" inert={!active}>
+        <ViewNavigation
+          name={app.name}
+          labels={sectionViews[app.id]}
+          index={view}
+          onChange={setView}
+        />
+      </div>
       <div
-        className={`window-content content-${app.id}`}
+        className={`window-content paged-content content-${app.id}`}
         tabIndex={-1}
         ref={scroll}
         inert={!active}
       >
         <SceneEffects enabled={active && !state.minimized && !effectsPaused}>
-          <Sections id={app.id} open={open} expand={expand} />
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={view}
+              className="section-view"
+              data-view={view}
+              initial={reduced ? false : { opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: effectsPaused ? 0 : 0.13 }}
+            >
+              <Sections id={app.id} view={view} open={open} expand={expand} />
+            </motion.div>
+          </AnimatePresence>
         </SceneEffects>
       </div>
     </motion.section>
