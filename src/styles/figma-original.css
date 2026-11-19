@@ -428,7 +428,7 @@
   }
   .overview-multiplayer {
     display: grid;
-    grid-template-columns: 1.38fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
     align-items: start;
     gap: calc(24 * var(--u));
   }
@@ -469,11 +469,18 @@
     font-size: calc(26 * var(--u));
   }
   .out-original-notes .out-original-content {
-    gap: calc(20 * var(--u));
+    justify-content: flex-start;
+    gap: calc(16 * var(--u));
     padding: calc(30 * var(--u));
   }
   .out-original-notes .out-original-content > h2 {
-    font-size: calc(42 * var(--u));
+    font-size: calc(36 * var(--u));
+  }
+  .out-original-notes .out-original-content > h2 br {
+    display: none;
+  }
+  .out-original-notes .overview-demo {
+    gap: calc(12 * var(--u));
   }
   .out-original-notes .out-original-content > p,
   .out-original-notes .overview-note p {
@@ -712,4 +719,12 @@
 }
 @media(min-width:761px) {
  .desktop:has(.composition-window.is-active) .desktop-empty { visibility:hidden; }
+}
+@media (max-width: 760px) {
+  .overview-multiplayer .ags-subwindow {
+    background: var(--surface);
+  }
+  .desktop:has(.overview-multiplayer) .desktop-empty {
+    visibility: hidden;
+  }
 }
