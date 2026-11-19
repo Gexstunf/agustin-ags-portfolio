@@ -59,9 +59,9 @@ export const apps = [
     id: "out-of-reach",
     name: "Out of Reach",
     app: "Unity",
-    title: "El miedo se mezcla con la risa.",
+    title: "Out of Reach.",
     subtitle:
-      "Out of Reach / aprender a crear experiencias para jugar con otros.",
+      "16–17 años / El proyecto que más me representa: de jugar a crear experiencias.",
     window: "Out of Reach — Mi proyecto más personal",
     icon: "unity",
   },

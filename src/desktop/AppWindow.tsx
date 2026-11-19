@@ -101,7 +101,7 @@ export function AppWindow({
       : "50% 110%";
   return (
     <motion.section
-      className={`app-window ${state.maximized ? "maximized" : ""} ${active ? "is-active" : "is-inactive"}`}
+      className={`app-window ${app.id === "3d" || app.id === "out-of-reach" ? "composition-window" : ""} ${state.maximized ? "maximized" : ""} ${active ? "is-active" : "is-inactive"}`}
       style={{
         zIndex: state.order,
         transformOrigin: origin,
@@ -142,8 +142,13 @@ export function AppWindow({
       dragConstraints={dragBounds}
       dragElastic={0.08}
       dragMomentum={false}
-      onPointerDownCapture={() => {
+      onPointerDownCapture={(e) => {
         if (!active) action("focus", app.id);
+        if (
+          (e.target as HTMLElement).closest(".ags-subbar") &&
+          !(e.target as HTMLElement).closest("button")
+        )
+          controls.start(e);
       }}
       aria-label={app.window}
       data-window={app.id}

@@ -11,6 +11,7 @@ import "./styles/effects.css";
 import "./styles/pages.css";
 import "./styles/overview.css";
 import "./styles/ags-alignment.css";
+import "./styles/figma-original.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Desktop />

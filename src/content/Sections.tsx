@@ -47,17 +47,17 @@ export function Sections({ id, open, expand }: Props) {
             Desde chico quería programar. De los 15 a los 18 años pasé de la
             curiosidad a crear proyectos en equipo.
           </p>
-          <p>
-            Me gusta imaginar, diseñar, programar y organizar. Siempre busco
-            mejorar.
-          </p>
+
           <div className="overview-traits">
             <span>Organizado</span>
             <span>En equipo</span>
             <span>En evolución</span>
           </div>
-          <button className="primary" onClick={() => open("recorrido")}>
-            Explorar mi recorrido
+          <button
+            className="text-button disciplines"
+            onClick={() => open("recorrido")}
+          >
+            Frontend / Sistemas / 3D / IA
           </button>
         </div>
         <CodeStudio explore={() => open("universo")} />
@@ -74,11 +74,10 @@ export function Sections({ id, open, expand }: Props) {
             herramientas que antes no conocía.
           </p>
           <div className="universe-footnote">
-            <p>Deporte, días cálidos y amigos.</p>
-            <p>
-              Mis referencias: R.E.P.O., Helldivers 2, Counter-Strike y Pacific
-              Rim.
-            </p>
+            <span>01 Diseñar</span>
+            <span>02 Programar</span>
+            <span>03 Experimentar</span>
+            <span>04 Mejorar</span>
           </div>
         </div>
         <div className="overview-tools">
@@ -201,20 +200,22 @@ export function Sections({ id, open, expand }: Props) {
     return (
       <article className="overview overview-split overview-systems">
         <div className="overview-copy">
-          <h2>La estructura detrás de una aplicación.</h2>
-          <p>
-            Un modelo de datos para una web de recetas y comidas: conectar
-            ingredientes, usuarios y planes de alimentación.
-          </p>
+          <p className="ags-label">El modelo de datos</p>
+          <h2>
+            Lo que sostiene
+            <br />
+            una aplicación.
+          </h2>
+
           <div className="overview-relationships">
             <Note title="Recetas e ingredientes">
-              Qué se guarda y cómo se describe.
+              Qué se guarda y cómo se describe cada receta.
             </Note>
             <Note title="Planes y comidas">
-              Cómo se organiza la planificación.
+              Cómo se organiza la información de las comidas planificadas.
             </Note>
             <Note title="Usuarios y relaciones">
-              Cómo se conectan las entidades.
+              Las conexiones entre tablas dan estructura al conjunto.
             </Note>
           </div>
           <p className="overview-hint">
@@ -279,42 +280,85 @@ export function Sections({ id, open, expand }: Props) {
   if (id === "out-of-reach")
     return (
       <article className="overview overview-multiplayer">
-        <div className="overview-game-story">
-          <div className="overview-game-intro">
-            <img src="/assets/out-of-reach.png" alt="Out of Reach" />
+        <section className="ags-subwindow out-original-story">
+          <div className="ags-subbar">
+            <i />
+            Out of Reach / Terror, humor y amigos
+          </div>
+          <div className="out-original-content">
+            <div className="out-original-heading">
+              <img src="/assets/out-of-reach.png" alt="Out of Reach" />
+              <h2>
+                El miedo se mezcla
+                <br />
+                con la risa.
+              </h2>
+            </div>
             <p>
-              Un juego inspirado en R.E.P.O.: monstruos, miedo y humor con
-              amigos en una central aeroespacial.
+              <span className="desktop-copy">
+                Un juego multijugador inspirado en R.E.P.O., ambientado en una
+                central aeroespacial. Combina monstruos, tensión y situaciones
+                cómicas al jugar con amigos.
+              </span>
+              <span className="mobile-copy">
+                Multijugador de miedo y humor en una central aeroespacial.
+              </span>
             </p>
-          </div>
-          <div className="overview-game-notes">
-            <Note title="Mi aporte">
-              Programación e interacción con objetos, interfaz, escenarios y
-              multijugador. Unity, C#, Visual Studio y Photon.
+            <Note title="Mi aporte al proyecto">
+              <span className="desktop-copy">
+                Programé la interacción con objetos, los escenarios, la interfaz
+                y el multijugador. Trabajé con Unity, C# y Visual Studio 2022.
+              </span>
+              <span className="mobile-copy">
+                Programé objetos, escenarios, interfaz y multijugador con Unity
+                y C#.
+              </span>
             </Note>
-            <Note title="Lo que aprendí">
-              Entender qué debía sincronizarse. Nos organizamos por sprints con
-              Notion y Trello; los bugs también terminaron en risas.
-            </Note>
+            <button className="primary" onClick={() => open("metodo")}>
+              Ver mi método
+            </button>
           </div>
-        </div>
-        <div className="overview-demo">
-          <h2>Un objeto. Dos jugadores.</h2>
-          <p>Probá cómo se replica cada cambio.</p>
-          <SyncDemo />
-        </div>
+        </section>
+        <section className="ags-subwindow out-original-notes">
+          <div className="ags-subbar">
+            <i />
+            Notas / Lo que aprendí
+          </div>
+          <div className="out-original-content">
+            <h2>
+              De jugar
+              <br />a crear.
+            </h2>
+            <p>
+              <span className="desktop-copy">
+                Los videojuegos me permitían compartir momentos con amigos e
+                imaginar historias. Aprender a programarlos me permitió crear
+                esas experiencias.
+              </span>
+              <span className="mobile-copy">
+                De compartir historias con amigos a crear esas experiencias.
+              </span>
+            </p>
+            <Note title="Mi mayor desafío">
+              <span className="desktop-copy">
+                Comprender Photon: identificar qué objetos y acciones debían
+                sincronizarse entre los jugadores.
+              </span>
+              <span className="mobile-copy">
+                Aprendí a sincronizar objetos y acciones con Photon.
+              </span>
+            </Note>
+            <div className="overview-demo">
+              <h3>Un objeto. Dos jugadores.</h3>
+              <SyncDemo />
+            </div>
+          </div>
+        </section>
       </article>
     );
   if (id === "ia")
     return (
       <article className="overview overview-ai">
-        <header>
-          <h2>Preguntar, probar y entender.</h2>
-          <p>
-            Cuando algo no funciona o no entiendo un tema, busco ayuda o recurro
-            a la IA para comprenderlo y seguir avanzando.
-          </p>
-        </header>
         <div className="overview-gallery">
           <section className="ai-study">
             <p className="ags-label">Explorar el modelo</p>
@@ -337,40 +381,79 @@ export function Sections({ id, open, expand }: Props) {
           </section>
         </div>
         <p className="overview-hint">
-          Referencias de mi moodboard: cómo se procesa una entrada y cómo se
-          compara la precisión de los modelos.
+          Referencias del moodboard para entender las entradas, el procesamiento
+          y la salida de un modelo. Pulsá las imágenes para ampliar.
         </p>
       </article>
     );
   return (
     <article className="overview overview-method">
       <header>
-        <h2>Organizar para crear.</h2>
+        <p className="ags-label">Aprender en equipo</p>
+        <h2>
+          Una idea se convierte
+          <br />
+          en tareas compartidas.
+        </h2>
         <p>
-          Trabajo por sprints con Notion y Trello. Me gusta organizar y ayudar a
-          que el equipo dé lo mejor.
+          <span className="desktop-copy">
+            En Out of Reach trabajamos por sprints y repartimos las tareas con
+            Notion y Trello. Me gusta organizar el trabajo y ayudar a que cada
+            integrante dé lo mejor.
+          </span>
+          <span className="mobile-copy">
+            Trabajo por sprints con Notion y Trello. Me gusta organizar y ayudar
+            al equipo.
+          </span>
         </p>
       </header>
       <div className="overview-board">
-        <h3>Sprint · ejemplo interactivo</h3>
+        <h3 className="ags-label">Ejemplo visual de un sprint</h3>
         <SprintBoard />
       </div>
       <p className="overview-hint">Arrastrá, mové o completá las tareas.</p>{" "}
       <div className="overview-steps">
+        <p className="ags-label">Mi forma de trabajar</p>
         {[
-          { icon: Search, title: "Entender", text: "Definir el propósito." },
+          {
+            icon: Search,
+            title: "Entender",
+            text: "Definir qué queremos lograr y qué necesita el proyecto.",
+          },
           {
             icon: Compass,
             title: "Organizar",
-            text: "Asignar las tareas.",
+            text: "Dividir el trabajo por sprints y definir las tareas de cada integrante.",
           },
-          { icon: Code2, title: "Construir", text: "Programar e integrar." },
-          { icon: Lightbulb, title: "Mejorar", text: "Pedir ayuda y probar." },
+          {
+            icon: Code2,
+            title: "Construir",
+            text: "Integrar programación, escenarios, interfaz, objetos y multijugador.",
+          },
+          {
+            icon: Lightbulb,
+            title: "Mejorar",
+            text: "Buscar ayuda, probar y entender para seguir mejorando.",
+          },
         ].map((s) => (
           <section key={s.title}>
             <s.icon size={20} aria-hidden="true" />
             <h3>{s.title}</h3>
-            <p>{s.text}</p>
+            <p>
+              <span className="desktop-copy">{s.text}</span>
+              <span className="mobile-copy">
+                {
+                  (
+                    {
+                      Entender: "Definir el propósito.",
+                      Organizar: "Asignar tareas.",
+                      Construir: "Programar e integrar.",
+                      Mejorar: "Pedir ayuda y probar.",
+                    } as Record<string, string>
+                  )[s.title]
+                }
+              </span>
+            </p>
           </section>
         ))}
       </div>
