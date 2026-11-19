@@ -436,8 +436,18 @@
     height: 100%;
   }
   .overview-multiplayer .out-original-notes {
-    margin-top: calc(40 * var(--u));
-    height: calc(100% - 40 * var(--u));
+    margin-top: 0;
+    height: 100%;
+  }
+  .out-original-notes > .ags-subbar {
+    gap: calc(14 * var(--u));
+  }
+  .out-original-notes > .ags-subbar i {
+    flex-shrink: 0;
+    box-shadow:
+      calc(22 * var(--u)) 0 #ffbd2e,
+      calc(44 * var(--u)) 0 #28c840;
+    margin-right: calc(44 * var(--u));
   }
   .out-original-content {
     flex: 1;
@@ -499,6 +509,7 @@
   .out-original-notes .replication-actions button {
     padding: calc(8 * var(--u));
     font-size: calc(16 * var(--u));
+    min-height: max(32px, calc(44 * var(--u)));
   }
   .out-original-notes .replication-header > .mono {
     font-size: calc(12 * var(--u));
@@ -506,6 +517,14 @@
   .out-original-notes .replication-players {
     grid-template-columns: 1fr calc(20 * var(--u)) 1fr;
   }
+}
+.out-original-notes .replication-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.out-original-notes .replication-actions button {
+  min-width: 0;
+  white-space: nowrap;
 }
 @media (max-width: 760px) {
   .overview-home .overview-copy > .ags-label {
