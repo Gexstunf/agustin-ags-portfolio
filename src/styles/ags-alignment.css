@@ -525,3 +525,10 @@
  .universe-footnote { padding-top:7px; }
  .overview-universe .overview-tools > button { padding:10px; gap:7px; }
 }
+@media(min-width:1101px) {
+ .page-heading,.window-stage,.desktop-footer { width:calc(100% - 9.2vw); max-width:1744px; }
+ .overview { max-width:none; }
+}
+@media(min-width:1101px) and (min-height:850px) {
+ .overview-home h2 { font-size:clamp(4rem,18cqh,7rem); }
+}
