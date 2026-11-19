@@ -12,7 +12,7 @@ export const apps = [
     id: "universo",
     name: "Mi universo",
     app: "Finder",
-    title: "Las cosas que me mueven.",
+    title: "Todo parte de la curiosidad.",
     subtitle: "Ideas, herramientas e historias que forman parte de mi mundo.",
     window: "Finder — Mi universo",
     icon: "finder",

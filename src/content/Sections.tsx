@@ -1,12 +1,5 @@
 import type { ReactNode } from "react";
-import {
-  Code2,
-  Gamepad2,
-  HeartHandshake,
-  Search,
-  Compass,
-  Lightbulb,
-} from "lucide-react";
+import { Code2, Search, Compass, Lightbulb } from "lucide-react";
 import type { AppId } from "../desktop/apps";
 import { AppIcon } from "../components/AppIcon";
 import { Media, type MediaItem } from "../components/Media";
@@ -44,7 +37,12 @@ export function Sections({ id, open, expand }: Props) {
     return (
       <article className="overview overview-home">
         <div className="overview-copy">
-          <h2>Soy Agustín.</h2>
+          <p className="ags-label">Agustín / perfil personal</p>
+          <h2>
+            Soy
+            <br />
+            Agustín.
+          </h2>
           <p>
             Desde chico quería programar. De los 15 a los 18 años pasé de la
             curiosidad a crear proyectos en equipo.
@@ -68,33 +66,59 @@ export function Sections({ id, open, expand }: Props) {
   if (id === "universo")
     return (
       <article className="overview overview-universe">
-        <header>
-          <h2>Curiosidad dentro y fuera de la pantalla.</h2>
+        <div className="universe-personal">
+          <p className="ags-label">Mi universo</p>
+          <h2>Tecnología en todas sus formas.</h2>
           <p>
-            La tecnología me permite crear las historias y experiencias que
-            antes solo imaginaba.
+            Empecé con ganas de aprender. Crear proyectos me acercó a
+            herramientas que antes no conocía.
           </p>
-        </header>
-        <div className="overview-interests">
-          <Note title="Fuera de la pantalla">
-            <HeartHandshake aria-hidden="true" size={20} /> El deporte, los días
-            cálidos y salir con amigos.
-          </Note>
-          <Note title="Mis referencias">
-            <Gamepad2 aria-hidden="true" size={20} /> R.E.P.O., Helldivers 2,
-            Counter-Strike y Pacific Rim.
-          </Note>
+          <div className="universe-footnote">
+            <p>Deporte, días cálidos y amigos.</p>
+            <p>
+              Mis referencias: R.E.P.O., Helldivers 2, Counter-Strike y Pacific
+              Rim.
+            </p>
+          </div>
         </div>
         <div className="overview-tools">
           {[
-            ["vscode", "Programación", "portal"],
-            ["postman", "Sistemas", "sistemas"],
-            ["blender", "Mundos 3D", "3d"],
-            ["python", "Exploración e IA", "ia"],
-          ].map(([icon, name, app]) => (
+            [
+              "vscode",
+              "Frontend",
+              "Interfaces que se convierten en experiencias.",
+              "React · HTML · CSS",
+              "portal",
+            ],
+            [
+              "postman",
+              "Sistemas",
+              "La estructura que conecta cada parte.",
+              "Datos · API · Postman",
+              "sistemas",
+            ],
+            [
+              "blender",
+              "3D e interacción",
+              "Dar forma, movimiento y comportamiento.",
+              "Blender · Unity",
+              "3d",
+            ],
+            [
+              "python",
+              "Inteligencia artificial",
+              "Probar ideas y aprender del resultado.",
+              "Python · Modelos",
+              "ia",
+            ],
+          ].map(([icon, name, description, tools, app]) => (
             <button key={icon} onClick={() => open(app as AppId)}>
-              <AppIcon icon={icon} />
-              <span>{name}</span>
+              <div className="tool-heading">
+                <AppIcon icon={icon} />
+                <span className="ags-label">{name}</span>
+              </div>
+              <strong>{description}</strong>
+              <span className="tool-stack">{tools}</span>
             </button>
           ))}
         </div>
@@ -207,29 +231,49 @@ export function Sections({ id, open, expand }: Props) {
   if (id === "3d")
     return (
       <article className="overview overview-malvinas">
-        <header>
-          <h2>Programar para generar conciencia.</h2>
-          <p>
-            Malvinas combina un relato y minimisiones para mostrar la situación
-            de los soldados argentinos. Participé en la programación: esta vez,
-            crear también era invitar a reflexionar.
-          </p>
-        </header>
-        <div className="overview-gallery">
-          {image("soldado", "Modelo 3D de un soldado de Malvinas")}
-          {image(
-            "unity",
-            "Referencia del moodboard: escena y herramientas de Unity",
-          )}
-        </div>
-        <div className="overview-image-labels">
-          <span>Personaje de Malvinas</span>
-          <span>Unity · referencia del moodboard</span>
-        </div>
-        <p>
-          Los modelos, los escenarios y sus comportamientos construyen el mundo
-          que el jugador recorre.
-        </p>
+        <section className="ags-subwindow">
+          <div className="ags-subbar">
+            <i />
+            Blender — Personaje
+          </div>
+          <div className="model-story">
+            <div className="model-visual">
+              {image("soldado", "Modelo 3D de un soldado de Malvinas")}
+            </div>
+            <div>
+              <p className="ags-label">Modelado / 17–18 años</p>
+              <h2>Dar forma a una historia.</h2>
+              <p>
+                Malvinas combina relato y minimisiones para mostrar la situación
+                de los soldados argentinos.
+              </p>
+              <p>
+                Participé en la programación de una experiencia que invita a
+                reflexionar.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="ags-subwindow">
+          <div className="ags-subbar">
+            <i />
+            Unity — Escena e interacción
+          </div>
+          <div className="scene-story">
+            {image(
+              "unity",
+              "Referencia del moodboard: escena y herramientas de Unity",
+            )}
+            <h3>De los objetos a la escena.</h3>
+            <p>
+              Modelos, escenarios y comportamientos construyen el mundo que el
+              jugador recorre.
+            </p>
+            <span className="overview-hint">
+              Unity · referencia del moodboard
+            </span>
+          </div>
+        </section>
       </article>
     );
   if (id === "out-of-reach")
@@ -272,17 +316,25 @@ export function Sections({ id, open, expand }: Props) {
           </p>
         </header>
         <div className="overview-gallery">
-          <ReplayEffect label="Repetir recorrido de datos">
+          <section className="ai-study">
+            <p className="ags-label">Explorar el modelo</p>
+            <h3>De una idea a una prueba.</h3>
+            <ReplayEffect label="Repetir recorrido de datos">
+              {image(
+                "perceptron",
+                "Perceptrón: entradas, pesos y salida",
+                <NeuralSignals />,
+              )}
+            </ReplayEffect>
+          </section>
+          <section className="ai-study">
+            <p className="ags-label">Observar los resultados</p>
+            <h3>Comparar para entender.</h3>
             {image(
-              "perceptron",
-              "Perceptrón: entradas, pesos y salida",
-              <NeuralSignals />,
+              "validacion",
+              "Comparación de precisión de validación de tres modelos",
             )}
-          </ReplayEffect>
-          {image(
-            "validacion",
-            "Comparación de precisión de validación de tres modelos",
-          )}
+          </section>
         </div>
         <p className="overview-hint">
           Referencias de mi moodboard: cómo se procesa una entrada y cómo se
@@ -299,6 +351,11 @@ export function Sections({ id, open, expand }: Props) {
           que el equipo dé lo mejor.
         </p>
       </header>
+      <div className="overview-board">
+        <h3>Sprint · ejemplo interactivo</h3>
+        <SprintBoard />
+      </div>
+      <p className="overview-hint">Arrastrá, mové o completá las tareas.</p>{" "}
       <div className="overview-steps">
         {[
           { icon: Search, title: "Entender", text: "Definir el propósito." },
@@ -317,11 +374,6 @@ export function Sections({ id, open, expand }: Props) {
           </section>
         ))}
       </div>
-      <div className="overview-board">
-        <h3>Sprint · ejemplo interactivo</h3>
-        <SprintBoard />
-      </div>
-      <p className="overview-hint">Arrastrá, mové o completá las tareas.</p>
     </article>
   );
 }
